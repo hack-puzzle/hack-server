@@ -12,7 +12,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class TimeController {
 
     @GetMapping("concert-start")
-    @CrossOrigin(origins = "http://localhost:8100")
+    @CrossOrigin(origins = "http://localhost:8200")
     public ResponseEntity<Time> getConcertStartTime() {
         return new ResponseEntity<>(new Time("12:00:00"), OK);
     }
