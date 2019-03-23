@@ -3,10 +3,12 @@ package com.puzzle.server.services;
 import com.puzzle.server.dto.ArtistInfo;
 import com.puzzle.server.dto.ConcertInfo;
 import com.puzzle.server.dto.ConcertUpdateInfo;
+import com.puzzle.server.dto.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +32,20 @@ public class ConcertService {
         ConcertUpdateInfo concertUpdateInfo = new ConcertUpdateInfo();
         concertUpdateInfo.setStartTime(timeFormatService.format("24.03.2019 19:00"));
         concertInfo.setConcertUpdateInfo(concertUpdateInfo);
+        concertInfo.getSongList().addAll(Arrays.asList(
+           new Song("A Reason To Fight"),
+           new Song("Ich will"),
+           new Song("Sweet Dreams"),
+           new Song("My Blood"),
+           new Song("Demons Are A Girl’s Best Friend"),
+           new Song("Wrong Side of Heaven"),
+           new Song("Jumpsuit"),
+           new Song("In The End"),
+           new Song("Decadence"),
+           new Song("Stan")
+        ));
+
+
         concertInfoMap.put("radiotapok", concertInfo);
 
         // Team
