@@ -28,7 +28,7 @@ public class ConcertService {
         artistInfo.setPhotoUrl("assets/artists/radiotapok/tapok-icon.png");
         concertInfo.setArtistInfo(artistInfo);
         ConcertUpdateInfo concertUpdateInfo = new ConcertUpdateInfo();
-        concertUpdateInfo.setStartTime(timeFormatService.format("24.03.2019 19:00:00"));
+        concertUpdateInfo.setStartTime(timeFormatService.format("24.03.2019 19:00"));
         concertInfo.setConcertUpdateInfo(concertUpdateInfo);
         concertInfoMap.put("radiotapok", concertInfo);
 
@@ -40,7 +40,7 @@ public class ConcertService {
         artistInfo.setPhotoUrl("assets/artists/radiotapok/tapok-icon.png");
         concertInfo.setArtistInfo(artistInfo);
         concertUpdateInfo = new ConcertUpdateInfo();
-        concertUpdateInfo.setStartTime(timeFormatService.format("25.03.2019 20:12:00"));
+        concertUpdateInfo.setStartTime(timeFormatService.format("25.03.2019 20:12"));
         concertInfo.setConcertUpdateInfo(concertUpdateInfo);
         concertInfoMap.put("team", concertInfo);
     }

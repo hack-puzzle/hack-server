@@ -2,21 +2,22 @@ package com.puzzle.server.services;
 
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 @Service
 public class TimeFormatService {
 
-    private static SimpleDateFormat jsonFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+    private static DateTimeFormatter jsonFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
+    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
     public String format(String time) {
-
         try {
-            return jsonFormat.format(simpleDateFormat.parse(time));
-        } catch (ParseException e) {
-            return "2019-11-11T11:11:11";
+            return jsonFormat.format(LocalDateTime.parse(time, formatter));
+        } catch (DateTimeParseException ex) {
+            ex.printStackTrace();
+            return "2077-07-17 17:17:17";
         }
     }
 }
