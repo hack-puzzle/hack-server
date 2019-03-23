@@ -1,9 +1,10 @@
 package com.puzzle.server.controllers;
 
 import com.puzzle.server.dto.ArtistInfo;
+import com.puzzle.server.dto.ConcertInfo;
 import com.puzzle.server.dto.ConcertUpdateInfo;
 import com.puzzle.server.dto.Time;
-import com.puzzle.server.services.ConcertResolverService;
+import com.puzzle.server.services.ConcertService;
 import com.puzzle.server.services.TimeFormatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class InfoController {
 
     @Autowired
-    private ConcertResolverService concertResolverService;
+    private ConcertService concertService;
 
     @Autowired
     private TimeFormatService timeFormatService;
@@ -33,12 +34,17 @@ public class InfoController {
 
     @GetMapping("/artist-info")
     public ResponseEntity<ArtistInfo> getArtistInfo(@PathVariable String concertName) {
-        return new ResponseEntity<>(concertResolverService.getConcertInfo(concertName).getArtistInfo(), OK);
+        return new ResponseEntity<>(concertService.getConcertInfo(concertName).getArtistInfo(), OK);
     }
 
     @GetMapping("/concert-update")
     public ResponseEntity<ConcertUpdateInfo> getConcertUpdate(@PathVariable String concertName) {
-        return new ResponseEntity<>(concertResolverService.getConcertInfo(concertName).getConcertUpdateInfo(), OK);
+        return new ResponseEntity<>(concertService.getConcertInfo(concertName).getConcertUpdateInfo(), OK);
+    }
+
+    @GetMapping("/concert-info")
+    public ResponseEntity<ConcertInfo> getConcertInfo(@PathVariable String concertName) {
+        return new ResponseEntity<>(concertService.getConcertInfo(concertName), OK);
     }
 
 }

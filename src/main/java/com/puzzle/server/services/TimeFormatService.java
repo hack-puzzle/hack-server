@@ -20,4 +20,13 @@ public class TimeFormatService {
             return "2077-07-17 17:17:17";
         }
     }
+
+    public String format(LocalDateTime time) {
+        try {
+            return jsonFormat.format(time);
+        } catch (DateTimeParseException ex) {
+            ex.printStackTrace();
+            return "2077-07-17 17:17:17";
+        }
+    }
 }

@@ -5,12 +5,50 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" th:src="@{../webjars/jquery/3.3.1-2/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{../main.js}"></script>
+    <link rel="stylesheet" th:href="@{../webjars/bootstrap/4.1.0/css/bootstrap.min.css} "/>
+
 </head>
 <body>
-    <div>
-        <h3>Start time</h3>
-        <input type="text" id="start-time"/>
-        <input type="button" id="btn-start-time-confirm" value="Confirm">
+    <div class="container" style="width: 70%; height: 700px; background-color: aliceblue;">
+        <div style="padding: 15px;">
+            <div class="block" style="margin-top: 40px;"></div>
+
+            <div class="row">
+                <div class="offset-md-1 col-md-1">
+                    <a href="concert-info"><input type="button" class="btn btn-info" value="Concert info"></a>
+                </div>
+                <div class="offset-md-1 col-md-1">
+                    <input type="button" class="btn btn-success" value="Next song" id="btn-next-song">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-3">
+                    <h3 style="text-align: center;">Start time</h3>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="start-time"/>
+                </div>
+                <div class="col-md-1 offset-md-1">
+                    <input type="button" id="btn-start-time-confirm" value="Confirm" class="btn btn-primary">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-3">
+                    <h3 style="text-align: center;">Notification</h3>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="notification-text"/>
+                </div>
+                <div class="col-md-1 offset-md-1">
+                    <input type="button" id="btn-notification-send" value="Send" class="btn btn-primary">
+                </div>
+                <div class="col-md-1">
+                    <input type="button" id="btn-notification-clear" value="Clear" class="btn btn-danger">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
