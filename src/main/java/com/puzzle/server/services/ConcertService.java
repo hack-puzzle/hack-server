@@ -2,6 +2,7 @@ package com.puzzle.server.services;
 
 import com.puzzle.server.dto.ArtistInfo;
 import com.puzzle.server.dto.ConcertInfo;
+import com.puzzle.server.dto.ConcertUpdateInfo;
 import com.puzzle.server.dto.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,9 @@ public class ConcertService {
         ArtistInfo artistInfo = new ArtistInfo();
         artistInfo.setName("Radio Tapok");
         concertInfo.setArtistInfo(artistInfo);
-        concertInfo.setStartTime(new Time(timeFormatService.format("12.11.2012 11:12:00")));
+        ConcertUpdateInfo concertUpdateInfo = new ConcertUpdateInfo();
+        concertUpdateInfo.setStartTime(new Time(timeFormatService.format("12.11.2012 11:12:00")));
+        concertInfo.setConcertUpdateInfo(concertUpdateInfo);
         concertInfoMap.put("radiotapok", concertInfo);
     }
 

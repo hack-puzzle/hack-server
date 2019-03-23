@@ -1,6 +1,7 @@
 package com.puzzle.server.controllers;
 
 import com.puzzle.server.dto.ArtistInfo;
+import com.puzzle.server.dto.ConcertUpdateInfo;
 import com.puzzle.server.dto.Time;
 import com.puzzle.server.services.ConcertResolverService;
 import com.puzzle.server.services.TimeFormatService;
@@ -36,7 +37,7 @@ public class InfoController {
     }
 
     @GetMapping("/concert-update")
-    public ResponseEntity<Time> getConcertUpdate(@PathVariable String concertName) {
-        return new ResponseEntity<>(new Time(timeFormatService.format("24.03.2019 12:00:00")), OK);
+    public ResponseEntity<ConcertUpdateInfo> getConcertUpdate(@PathVariable String concertName) {
+        return new ResponseEntity<>(concertResolverService.getConcertInfo(concertName).getConcertUpdateInfo(), OK);
     }
 }

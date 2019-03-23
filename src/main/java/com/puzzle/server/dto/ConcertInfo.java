@@ -9,6 +9,6 @@ public class ConcertInfo {
 
     private ArtistInfo artistInfo;
 
-    private Time startTime;
+    private ConcertUpdateInfo concertUpdateInfo;
 
 }
