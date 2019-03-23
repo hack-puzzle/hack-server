@@ -4,14 +4,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 
-@JsonSerialize
 @Getter
 @Setter
-public class Time {
+@JsonSerialize
+public class Notification {
 
+    private String text;
     private String time;
-
-    public Time(String time) {
-        this.time = time;
-    }
 }

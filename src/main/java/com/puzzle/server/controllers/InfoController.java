@@ -16,6 +16,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @Controller
 @RequestMapping("{concertName}")
+@CrossOrigin
 public class InfoController {
 
     @Autowired
@@ -25,7 +26,6 @@ public class InfoController {
     private TimeFormatService timeFormatService;
 
     @GetMapping("/concert-start")
-    @CrossOrigin
     public ResponseEntity<Time> getConcertStartTime(@PathVariable String concertName) {
         return new ResponseEntity<>(new Time(timeFormatService.format("24.03.2019 12:00:00")), OK);
     }
@@ -36,7 +36,6 @@ public class InfoController {
     }
 
     @GetMapping("/concert-update")
-    @CrossOrigin
     public ResponseEntity<Time> getConcertUpdate(@PathVariable String concertName) {
         return new ResponseEntity<>(new Time(timeFormatService.format("24.03.2019 12:00:00")), OK);
     }
