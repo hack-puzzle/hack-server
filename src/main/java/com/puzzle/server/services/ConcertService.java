@@ -27,7 +27,7 @@ public class ConcertService {
         artistInfo.setName("Radio Tapok");
         concertInfo.setArtistInfo(artistInfo);
         ConcertUpdateInfo concertUpdateInfo = new ConcertUpdateInfo();
-        concertUpdateInfo.setStartTime(new Time(timeFormatService.format("12.11.2012 11:12:00")));
+        concertUpdateInfo.setStartTime(timeFormatService.format("12.11.2012 11:12:00"));
         concertInfo.setConcertUpdateInfo(concertUpdateInfo);
         concertInfoMap.put("radiotapok", concertInfo);
     }

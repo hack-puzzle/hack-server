@@ -11,7 +11,7 @@ import java.util.List;
 @JsonSerialize
 public class ConcertUpdateInfo {
 
-    private Time startTime;
+    private String startTime;
     private List<Notification> notificationList;
     private int currentSongId;
 
