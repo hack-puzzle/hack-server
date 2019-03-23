@@ -1,9 +1,10 @@
 language: java
 install: true
 jdk:
-  - oraclejdk8
+- oraclejdk8
 deploy:
   provider: heroku
-  api-key:
-    secure: $HEROKU_API_KEY
   app: hack-university-server
+env:
+  global:
+    secure: G/r2R1qqxohgV1e3Dv2G7ErwC0LDnERspj/JjvJuYD3b7Mi3HTrce+vHZak+GazpIlrtsYlTByDWg1mRKeXggKgxqNBuKjD+YUPZU22x2d3ZRDz6nLET7n2pBhqr4+kDK0Ej8rVH6zb6oYGD+r3WlZ7nxa4Bobo+Hdbh6hqYlQVe3gF/0EY+Qe8B095HAIjP+Ok4ODH1IAuvejcTUWAdqJZRdWhEJJFZVTz/Tok0euJCFyF4bhNgyIpyB22Fj5ETQZa8wF4NmnoN5I2TXfmHhQgfMmoTd061Ln5CQT1crEyWYZxwJ3+yRpm/17YtynVu332EbPVcK77FtMCHB7BHJL9Z9OzFuL+gP0pkAH4YOWn3ZfXjNGhLk54wrDmXaRFUNFwZ3IAjAtce0NzkMMz4Gl50FN3BXja2U08hZQye2hxOILcXN83C+v6BIYr1fXCH0E68jajm2RMhut8ASAoygPV5wEh571D+8ff9KZ++6XQ7SYDzYZyGb0YMShCg/mdMtX72POr2IxZ0KhJFJCWUwO39bzgOuRg+2WMM7czYKMpMD+LqIZI1S1YnTFBpud7ctqAwXNE5Kt3dNRKhAlJZfxM4nEakSaeIZOGtWIqQWx1GC4kzOFw4a6YOmhizbhpYbABCLYDI3VbJTOjjhPbmG84H2XfeuUmVknKkwUINwEQ=
