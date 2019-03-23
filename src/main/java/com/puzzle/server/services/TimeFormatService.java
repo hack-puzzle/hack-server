@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 @Service
 public class TimeFormatService {
 
-    private static DateTimeFormatter jsonFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
+    private static DateTimeFormatter jsonFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
     public String format(String time) {
