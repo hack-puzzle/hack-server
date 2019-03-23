@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -40,11 +39,6 @@ public class InfoController {
     @GetMapping("/concert-update")
     public ResponseEntity<ConcertUpdateInfo> getConcertUpdate(@PathVariable String concertName) {
         return new ResponseEntity<>(concertResolverService.getConcertInfo(concertName).getConcertUpdateInfo(), OK);
-    }
-
-    @RequestMapping("/")
-    public String admin(@PathVariable String concertName) {
-        return "index";
     }
 
 }
