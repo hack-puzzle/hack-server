@@ -1,8 +1,12 @@
 package com.puzzle.server.dto;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import lombok.Getter;
+import lombok.Setter;
 
 @JsonView
+@Getter
+@Setter
 public class Time {
 
     @JsonView
