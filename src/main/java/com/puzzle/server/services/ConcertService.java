@@ -56,7 +56,7 @@ public class ConcertService {
         artistInfo = new ArtistInfo();
         artistInfo.setName("Team");
         artistInfo.setSiteUrl("http://ifmo.ru");
-        artistInfo.setPhotoUrl("assets/artists/radiotapok/tapok-icon.png");
+        artistInfo.setPhotoUrl("assets/artists/team-icon.png");
         concertInfo.setArtistInfo(artistInfo);
         concertUpdateInfo = new ConcertUpdateInfo();
         concertUpdateInfo.setStartTime(timeFormatService.format("25.03.2019 20:12"));
