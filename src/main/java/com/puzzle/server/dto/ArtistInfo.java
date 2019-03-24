@@ -22,4 +22,13 @@ public class ArtistInfo {
     @JsonView
     private String instagramUrl;
 
+    @JsonView
+    private String facebookUrl;
+
+    @JsonView
+    private String vkUrl;
+
+    @JsonView
+    private String youtubeUrl;
+
 }
