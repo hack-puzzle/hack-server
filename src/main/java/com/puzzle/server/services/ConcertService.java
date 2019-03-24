@@ -57,6 +57,19 @@ public class ConcertService {
         concertUpdateInfo = new ConcertUpdateInfo();
         concertUpdateInfo.setStartTime(timeFormatService.format("25.03.2019 20:12"));
         concertInfo.setConcertUpdateInfo(concertUpdateInfo);
+        concertInfo.getSongList().addAll(Arrays.asList(
+                new Song("Танцуем с бубном"),
+                new Song("Не баг, а фича"),
+                new Song("Тяп-ляп, и в продакшн"),
+                new Song("Я у мамы программист"),
+                new Song("Пятничный деплой"),
+                new Song("Накотил"),
+                new Song("Восьмой стаканчик кофе"),
+                new Song("Кровь, пот и пиксели"),
+                new Song("404"),
+                new Song("У меня все работает")
+        ));
+
         concertInfoMap.put("team", concertInfo);
     }
 

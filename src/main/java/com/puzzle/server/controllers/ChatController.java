@@ -29,11 +29,12 @@ public class ChatController {
                 HttpStatus.OK);
     }
 
-    @PostMapping("/sendMsg/{userId}")
+    @PostMapping("/sendMsg")
     public ResponseEntity<HttpStatus> sendMsg(@PathVariable String concertName,
                                               @PathVariable Integer userId,
-                                              @RequestParam String text) {
-        chatService.addMessage(concertName, new Message(userId, text, userService.getUserNameById(userId, concertName)));
+                                              @RequestParam Message message) {
+        message.setUserName(userService.getUserNameById(userId, concertName));
+        chatService.addMessage(concertName, message);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
