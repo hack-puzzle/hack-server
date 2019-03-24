@@ -31,9 +31,8 @@ public class ChatController {
 
     @PostMapping("/send-msg")
     public ResponseEntity<HttpStatus> sendMsg(@PathVariable String concertName,
-                                              @PathVariable Integer userId,
                                               @RequestParam("msg") Message message) {
-        message.setUserName(userService.getUserNameById(userId, concertName));
+        message.setUserName(userService.getUserNameById(message.getUserId(), concertName));
         chatService.addMessage(concertName, message);
         return new ResponseEntity<>(HttpStatus.OK);
     }
