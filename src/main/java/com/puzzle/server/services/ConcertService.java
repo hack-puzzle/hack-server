@@ -28,6 +28,10 @@ public class ConcertService {
         artistInfo.setName("Radio Tapok");
         artistInfo.setSiteUrl("http://radiotapok.ru");
         artistInfo.setPhotoUrl("assets/artists/radiotapok/tapok-icon.png");
+        artistInfo.setFacebookUrl("http://facebook.com/radiotapok");
+        artistInfo.setInstagramUrl("http://instagram.com/radiotapok/");
+        artistInfo.setVkUrl("http://vk.com/radiotapok");
+        artistInfo.setYoutubeUrl("http://youtube.com/channel/UCYfYQ1lmPwPdxjBpW_rMJ7w");
         concertInfo.setArtistInfo(artistInfo);
         ConcertUpdateInfo concertUpdateInfo = new ConcertUpdateInfo();
         concertUpdateInfo.setStartTime(timeFormatService.format("24.03.2019 19:00"));
