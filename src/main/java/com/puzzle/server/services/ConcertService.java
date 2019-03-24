@@ -45,7 +45,6 @@ public class ConcertService {
            new Song("Stan")
         ));
 
-
         concertInfoMap.put("radiotapok", concertInfo);
 
         // Team
