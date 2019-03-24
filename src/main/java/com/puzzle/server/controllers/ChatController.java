@@ -29,7 +29,7 @@ public class ChatController {
                 HttpStatus.OK);
     }
 
-    @PostMapping("/sendMsg")
+    @PostMapping("/send-msg")
     public ResponseEntity<HttpStatus> sendMsg(@PathVariable String concertName,
                                               @PathVariable Integer userId,
                                               @RequestParam("msg") Message message) {
