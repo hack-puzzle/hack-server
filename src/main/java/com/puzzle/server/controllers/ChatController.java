@@ -2,6 +2,7 @@ package com.puzzle.server.controllers;
 
 import com.puzzle.server.dto.ChatUpdateInfo;
 import com.puzzle.server.dto.Message;
+import com.puzzle.server.dto.MessageRequest;
 import com.puzzle.server.dto.RegistrationResponse;
 import com.puzzle.server.services.ChatService;
 import com.puzzle.server.services.UserService;
@@ -31,8 +32,10 @@ public class ChatController {
 
     @PostMapping("/send-msg")
     public ResponseEntity<HttpStatus> sendMsg(@PathVariable String concertName,
-                                              @RequestParam Message message) {
-        message.setUserName(userService.getUserNameById(message.getUserId(), concertName));
+                                              @RequestParam MessageRequest msgRequest) {
+        Message message = new Message(Integer.parseInt(msgRequest.getUserId()),
+                msgRequest.getText(),
+                userService.getUserNameById(Integer.parseInt(msgRequest.getUserId()), concertName));
         chatService.addMessage(concertName, message);
         return new ResponseEntity<>(HttpStatus.OK);
     }
